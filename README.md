@@ -14,7 +14,7 @@
   - 任务列表
   - 任务列表截图
 ## Backend
-后端代码[@guoywcode]('https://github.com/guoywcode/oa-task-statistical')
+后端代码[@guoywcode](https://github.com/guoywcode/oa-task-statistical)
 
 ## Picture
 ![用户页面截图](src/assets/images/demo.png)
