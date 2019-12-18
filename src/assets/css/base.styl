@@ -1,0 +1,227 @@
+.dataPoper
+  .dataWrapper
+    display flex
+    flex-direction column
+    align-items center
+    width 100%
+    .green
+      color #67C23A
+    .blue
+      color #409EFF
+    .red
+      color #F56C6C
+    .gray
+      color #909399
+.colorPopper
+  .colorWrapper
+    width 100%
+    height 70px
+    display flex
+    flex-direction column
+    justify-content space-between
+    .colorLine
+      height 30px
+      width 100%
+      display flex
+      justify-content space-between
+      .colorItem
+        width 30px
+        height 30px
+        cursor pointer
+.rotate_refresh
+  transform rotate(360deg)
+  transition transform 1s
+.formBtns
+  width 100%
+  display flex
+  justify-content flex-end
+.submitWrapper
+  width 70%
+  margin 0 auto
+  color #ffffff
+  height 100%
+  .submitHeader
+    height 8%
+    display flex
+    font-size 24px
+    display flex
+    justify-content space-between
+    align-items center
+    .right
+      display flex
+      align-items center
+      .btn
+        background rgba(0,0,0,0.5)
+        padding 3px 5px
+        margin-left 10px
+        border-radius 5px
+        cursor pointer
+        &:hover
+          transition all 0.5s linear
+          background rgba(255,255,255,0.5)
+          i
+            color #7F7FD5
+  .scrollArea
+    width 100%
+    box-sizing border-box
+    padding-top 10px
+    padding-bottom 50px
+    height 92%
+  .submitContent
+    padding 5px 15px
+    .submitItem
+      background #ffffff
+      border-radius 5px
+      margin-bottom 20px
+      display flex
+      align-items center
+      justify-content space-between
+      padding 10px
+      color #5e5e5e
+      box-sizing border-box
+      &:last-child
+        margin-bottom 0
+      i
+        color #fff
+      .left
+        display flex
+        align-items center
+      .right
+        display flex
+        flex-shrink 0
+        align-items center
+        i
+          color #5e5e5e
+        .edit:hover
+          cursor pointer
+          color #409EFF
+      .content
+        margin-left 10px
+        font-size 16px
+      .flag
+        font-size 16px
+        flex-shrink 0
+        margin-right 10px
+        display flex
+        flex-direction column
+        .date
+          font-size 14px
+          margin-top 5px
+          .warn
+            font-size 16px
+            color #E6A23C
+      .checkBtnStart
+        width 40px
+        height 40px
+        padding 0px
+        flex-shrink 0
+        border-radius 50%
+        display flex
+        justify-content center
+        align-items center
+        background #9e9e9e
+        background-clip content-box
+        border 1px solid rgba(0,0,0,0.1)
+        cursor pointer
+      .checkBtn
+        width 20px
+        height 20px
+        padding 10px
+        flex-shrink 0
+        border-radius 50%
+        display flex
+        justify-content center
+        align-items center
+        background #9e9e9e
+        background-clip content-box
+        border 1px solid rgba(0,0,0,0.1)
+        cursor pointer
+        animation check 0.22s ease-out 2 normal forwards
+      @keyframes check
+        /* 定义开始状态  0%*/
+        0% 
+          width 20px
+          height 20px
+          padding 10px
+        /* 定义结束状态 100%*/
+        100%
+          width 40px
+          height 40px
+          padding 0px
+      .uncheckBtn
+        height 40px
+        width 40px
+        flex-shrink 0
+        border-radius 50%
+        display flex
+        justify-content center
+        align-items center
+        border 1px solid rgba(0,0,0,0.5)
+        cursor pointer
+        &:hover
+          i
+            color #5e5e5e
+    .listItem
+      background #ffffff
+      border-radius 5px
+      margin-bottom 20px
+      padding 10px
+      color #5e5e5e
+      display flex
+      box-sizing border-box
+      &:last-child
+        margin-bottom 0
+      i
+        color #5e5e5e
+      .left
+        width 20%
+        display flex
+        flex-direction column
+        justify-content center
+        align-items center
+        border-right 1px solid #BDBDBD
+        .warn
+          color #E6A23C
+          i
+            color #E6A23C
+        .complete
+          color #67C23A
+          i
+            color #67C23A
+        .infoItem
+          margin-bottom 5px
+          width 80%
+          &:last-child
+            margin-bottom 0
+      .right
+        width 80%
+        padding 0 10px 0 20px
+        box-sizing border-box
+        display flex
+        flex-direction column
+        justify-content center
+        .notask
+          color #F56C6C
+          i
+            color #F56C6C
+        .taskItem
+          margin-bottom 5px
+          &:last-child
+            margin-bottom 0px
+          .flagWrapper
+            margin-top 5px
+            display flex
+            justify-content flex-end
+            .flag
+              margin-top 5px
+              font-size 14px
+              width 260px
+              display flex
+              justify-content space-between
+              .date
+                width 190px
+                display flex
+                justify-content flex-start
+              .status
+                margin-right 5px
+      
