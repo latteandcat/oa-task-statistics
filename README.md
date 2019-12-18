@@ -18,3 +18,4 @@
 
 ## Picture
 ![用户页面截图](src/assets/images/demo.png)
+![管理员页面截图](src/assets/images/admin.png)
