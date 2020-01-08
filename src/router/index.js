@@ -6,22 +6,19 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '*',
-    redirect: '/tasklist'
+    redirect: '/user/tasklist'
   },
   {
-    path: '/tasklist',
-    name: 'tasklist',
-    component: () => import('../views/taskList.vue')
-  },
-  {
-    path: '/admin',
-    name: 'admin',
-    component: () => import('../views/adminTaskList.vue')
-  },
-  {
-    path: '/tasklistByName',
-    name: 'tasklistByName',
-    component: () => import('../views/taskListByName.vue')
+    path: '/user',
+    name: 'User',
+    component: () => import('@/components/layout/index'),
+    children: [
+      {
+        path: 'tasklist',
+        component: () => import('@/views/user/taskList'),
+        meta: { requiresAuth: true }
+      }
+    ]
   }
 ]
 

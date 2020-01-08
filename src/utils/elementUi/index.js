@@ -12,7 +12,11 @@ import {
   MessageBox,
   Notification,
   DatePicker,
-  Button
+  Button,
+  Dropdown,
+  DropdownMenu,
+  DropdownItem,
+  Drawer
 } from 'element-ui'
 
 Vue.use(Input)
@@ -25,6 +29,10 @@ Vue.use(CollapseItem)
 Vue.use(Icon)
 Vue.use(Dialog)
 Vue.use(DatePicker)
+Vue.use(Dropdown)
+Vue.use(DropdownMenu)
+Vue.use(DropdownItem)
+Vue.use(Drawer)
 
 Vue.prototype.$notify = Notification
 Vue.prototype.$prompt = MessageBox.prompt
