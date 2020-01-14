@@ -2,7 +2,7 @@
   <el-dialog
     title="操作手册"
     :visible.sync="flag"
-    width="700px"
+    width="80%"
     top="80px"
   >
     <el-collapse v-model="activeName">
@@ -16,7 +16,7 @@
         <template slot="title">
           <span class="red">请假记录规则<i class="el-icon-warning"></i></span>
         </template>
-        <div>用户每天6点以后需要打开页面自动登录一次，否则自动记为请假</div>
+        <div>用户需每天8~11点打开电脑（需要关闭防火墙）或每天6点以后打开页面自动登录一次，否则自动记为请假</div>
       </el-collapse-item>
       <el-collapse-item name="3">
         <template slot="title">

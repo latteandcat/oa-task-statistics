@@ -1,0 +1,139 @@
+.loginDiaHeader
+  width 100%
+  height 30px
+  display flex
+  justify-content space-between
+  align-items center
+.wechatLogin
+  width 300px
+  height 400px
+  margin 0 auto
+.colorPopper
+  .colorWrapper
+    width 100%
+    height 70px
+    display flex
+    flex-direction column
+    justify-content space-between
+    .colorLine
+      height 30px
+      width 100%
+      display flex
+      justify-content space-between
+      .colorItem
+        width 30px
+        height 30px
+        cursor pointer
+.rotate_refresh
+  transform rotate(360deg)
+  transition transform 1s
+.pageWrap
+  height 100%
+  width 100%
+  min-width 300px
+  box-sizing border-box
+  margin 0 auto
+  padding 30px 200px
+  // overflow auto
+  color #5E5E5E
+  .pageHeader
+    height 50px
+    display flex
+    justify-content space-between
+    align-items center
+    color #ffffff
+    .title_mobile
+      display none
+      width fit-content
+      flex-shrink 0
+      font-size 24px
+    .title
+      flex-shrink 0
+      width fit-content
+      font-size 24px
+    .btns
+      display flex
+      i
+        color #ffffff
+      .btn
+        background rgba(0,0,0,0.5)
+        width 32px
+        height 32px
+        display flex
+        justify-content center
+        align-items center
+        margin-left 10px
+        border-radius 5px
+        cursor pointer
+        font-size 24px
+        
+        &:hover
+          transition all 0.3s linear
+          background rgba(255,255,255,0.5)
+          i
+            color #7F7FD5
+  .pageContent
+    padding 15px 0
+    .allAchieved
+      border:2px solid #67C23A
+    .isNoTask
+      border:2px solid #F56C6C
+    .userItem
+      padding 5px 10px
+      background-color #ffffff
+      border-radius 4px
+      margin-bottom 5px
+      border 2px solid #ffffff
+      &:last-child
+        margin-bottom 0
+      .userInfo
+        padding-bottom 5px
+        // border-bottom 1px solid #bdbdbd
+        margin-bottom 10px
+        .infoItem
+          display flex
+          justify-content space-between
+          .warn
+            flex-shrink 0
+            color #E6A23C
+            i
+              color #E6A23C
+      .userTasks
+        .taskItem
+          .flags
+            display flex
+            justify-content flex-end
+            margin 5px 0
+            font-size 16px
+            .date_mobile
+              display none
+        .notask
+          color #F56C6C
+          i
+            color #F56C6C
+@media screen and (max-width: 1200px)
+  .pageWrap
+    padding 30px 50px
+@media screen and (max-width: 563px)
+  .pageWrap
+    padding 30px 20px
+    font-size 18px
+    .pageHeader
+      .title
+        display none
+      .title_mobile
+        display block
+        font-size 20px
+    .pageContent
+      .userItem
+        .userTasks
+          .taskItem
+            .flags
+              font-size 14px
+              .date
+                display none
+              .date_mobile
+                display block
+@media screen and (max-width: 330px)
+  .pageWrap
+    padding 30px 10px

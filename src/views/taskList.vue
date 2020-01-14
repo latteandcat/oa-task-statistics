@@ -57,6 +57,41 @@
     <div class="scrollArea">
       <vue-scroll>
         <div id="captureContent" class="submitContent">
+          <div v-if="isShowYioks" class="yioks">
+            <div class="left">
+              <div style="width:42px;height:42px;"><img :src="logo" /></div>
+              <div style="margin-left:10px;cursor:default;">
+                {{lifewords.content}}
+                <input id="copyLifeWord" v-model="lifewords" type="text"/>
+              </div>
+            </div>
+            <div class="btns">
+              <div class="line">
+                <div id="like" class="btn" style="width:71px;padding-left:1px;" @click="likeLifeWord(lifewords.uuid)">
+                  <span style="margin-right:2px;">👍</span><span>顶</span>
+                </div>
+                <div id="dislike" class="btn" style="width:72px;" @click="dislikeLifeWord(lifewords.uuid)">
+                  <span style="margin-right:3px;">👎</span><span>踩</span>
+                </div>
+              </div>
+              <div class="line">
+                <div class="btn" style="margin-right:10px;" @click="copyLifeWord">
+                  <span style="margin-right:2px;">👏</span><span>复制</span>
+                </div>
+                <div class="btn" @click="refreshLifeWord">
+                  <span style="margin-right: 2px;">🖐</span><span>刷新</span>
+                </div>
+              </div>
+              <div class="line">
+                <div class="btn" style="margin-right:10px;" @click="addWord">
+                  <span style="margin-right:1px;">🙋‍♂️</span><span>投稿</span>
+                </div>
+                <div class="btn" @click="openWordRank">
+                  <span>🎉</span><span>热度榜</span>
+                </div>
+              </div>
+            </div>
+          </div>
           <div v-if="showEmpty" class="submitItem">您当前暂无任务</div>
           <div v-for="(item,index) in tasks" :key="index" class="submitItem">
             <div class="left">
@@ -168,6 +203,51 @@
         </div>
       </el-form>
     </el-dialog>
+    <el-dialog
+      :visible.sync="wordDialog"
+      width="700px"
+      title="每日一句投稿"
+      :close-on-click-modal="false"
+      top="8%">
+      <el-form
+        ref="addWordForm"
+        :model="addWordForm"
+        :rules="addWordRules"
+        label-position="left"
+        label-width="80px"
+        >
+        <el-form-item prop="content" label="句子内容">
+          <el-input v-model="addWordForm.content" type="textarea" placeholder="请输入投稿的句子内容"></el-input>
+        </el-form-item>
+        <el-form-item prop="from" label="句子来源">
+          <el-input v-model="addWordForm.from" placeholder="请输入投稿的句子来源"></el-input>
+        </el-form-item>
+        <p>请勿恶作剧投稿</p>
+        <p>投稿后内容将显示为"句子 --- 来源"</p>
+        <p>请务必填写句子来源</p>
+        <div style="display:flex;justify-content:flex-end;align-items:flex-end;">
+          <el-button @click="cancelAddWord">取消投稿</el-button>
+          <el-button type="primary" :loading="submitAddWordLoading" @click="submitAddWord">提交投稿</el-button>
+        </div>
+      </el-form>
+    </el-dialog>
+    <el-dialog
+      :visible.sync="wordRankDialog"
+      width="700px"
+      title="每日一句热度榜🎉🎉🎉"
+      top="5%"
+    >
+      <div class="wordRankContent">
+        <p v-if="rankWords.length === 0">(⊙ˍ⊙)还没有人投稿哦！</p>
+        <div v-for="(item, index) in rankWords" :key="index" class="workRankItem">
+          <p>{{ index+1 }}. {{ item.content }}</p>
+          <p style="text-align:right;">
+            <span style="margin-right:10px;">👍 {{ item.likeCount }}</span>
+            <span>投稿用户：{{ item.authorName }}</span>
+          </p>
+        </div>
+      </div>
+    </el-dialog>
   </div>
 </template>
 
@@ -215,7 +295,7 @@ export default {
                 } else {
                   this.$notify({
                     title: '提示',
-                    message: res.massage,
+                    message: res.message,
                     type: 'warning',
                     offset: 80
                   })
@@ -254,4 +334,46 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~@/assets/css/base.styl';
+</style>
+<style>
+.likeHeart {
+  top: 0;
+  right: 5px;
+  position: absolute;
+  animation: heartBubble 1s ease-out 1 normal forwards;
+}
+@keyframes heartBubble {
+  /* 定义开始状态  0%*/
+  0% {
+    top: 0;
+    right: 5px;
+    opacity: 1;
+  }
+  /* 定义结束状态 100%*/
+  100% {
+    top: -21px;
+    right: 5px;
+    opacity: 0;
+  }
+}
+.dislikeHeart {
+  top: 0;
+  right: 6px;
+  position: absolute;
+  animation: disheartBubble 1s ease-out 1 normal forwards;
+}
+@keyframes disheartBubble {
+  /* 定义开始状态  0%*/
+  0% {
+    top: 0;
+    right: 6px;
+    opacity: 1;
+  }
+  /* 定义结束状态 100%*/
+  100% {
+    top: -21px;
+    right: 6px;
+    opacity: 0;
+  }
+}
 </style>

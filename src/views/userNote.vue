@@ -12,12 +12,13 @@
         </template>
         <div><i class="el-icon-football" />该系统使用ip自动登录，每个人只能查看自己的任务</div>
         <div><i class="el-icon-football" />请注意合理拆分任务</div>
+        <div><i class="el-icon-football" />本系统用户页面未适配移动端，请在电脑端使用浏览器访问</div>
       </el-collapse-item>
       <el-collapse-item name="2">
         <template slot="title">
           <span class="red">每天登录<i class="el-icon-warning"></i></span>
         </template>
-        <div>用户每天6点以后需要打开页面自动登录一次，否则自动记为请假</div>
+        <div>用户需每天8~11点打开电脑（需要关闭防火墙）或每天6点以后打开页面自动登录一次，否则自动记为请假</div>
       </el-collapse-item>
       <el-collapse-item name="3">
         <template slot="title">

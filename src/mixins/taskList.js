@@ -75,7 +75,7 @@ export default {
           this.getUserInfo()
           this.$notify({
             title: '提示',
-            message: res.massage,
+            message: res.message,
             type: 'warning',
             offset: 80
           })
@@ -200,7 +200,7 @@ export default {
             } else {
               this.$notify({
                 title: '提示',
-                message: res.massage,
+                message: res.message,
                 type: 'warning',
                 offset: 80
               })
@@ -252,7 +252,7 @@ export default {
             } else {
               this.$notify({
                 title: '提示',
-                message: res.massage,
+                message: res.message,
                 type: 'warning',
                 offset: 80
               })

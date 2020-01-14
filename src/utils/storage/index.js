@@ -15,7 +15,7 @@ export default {
     this.getStorage().setItem(key, value)
   },
   remove (key) {
-    this.getStorage().removeItem(Base64.enable(key))
+    this.getStorage().removeItem(Base64.encode(key))
   },
   getStorage () {
     if (typeof localStorage !== 'undefined') {

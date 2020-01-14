@@ -52,5 +52,18 @@ export default {
         idName
       }
     })
+  },
+  passLogin (params) {
+    return api({
+      url: '/api/login/passLogin',
+      method: 'GET',
+      params
+    })
+  },
+  checkLogin () {
+    return api({
+      url: '/api/login/checkToken',
+      method: 'GET'
+    })
   }
 }
