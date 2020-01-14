@@ -1,6 +1,6 @@
 import storage from '@/utils/storage/index'
 import { defaultColors } from '@/assets/js/background'
-import logo from '@/assets/images/logo.png'
+import logo from '@/assets/images/dayword.png'
 import words from '@/api/words'
 export default {
   filters: {

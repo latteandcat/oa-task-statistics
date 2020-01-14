@@ -59,7 +59,7 @@
         <div id="captureContent" class="submitContent">
           <div v-if="isShowYioks" class="yioks">
             <div class="left">
-              <div style="width:42px;height:42px;"><img :src="logo" /></div>
+              <div style="width:80px;height:80px;"><img :src="logo" /></div>
               <div style="margin-left:10px;cursor:default;">
                 {{lifewords.content}}
                 <input id="copyLifeWord" v-model="lifewords" type="text"/>
