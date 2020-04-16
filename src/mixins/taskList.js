@@ -207,7 +207,7 @@ export default {
             }
           }).catch(() => {
             this.$notify({
-              title: '成功',
+              title: '提示',
               message: '任务添加失败，请稍后重试',
               type: 'error',
               offset: 80
@@ -259,7 +259,7 @@ export default {
             }
           }).catch(() => {
             this.$notify({
-              title: '成功',
+              title: '提示',
               message: '任务编辑失败，请稍后重试',
               type: 'error',
               offset: 80
